@@ -1,4 +1,5 @@
 import { About, type AboutProps } from "@/sections/About";
+import { Contact } from "@/sections/Contact";
 import {
   EngineeringToolkit,
   type EngineeringToolkitProps,
@@ -1541,6 +1542,7 @@ export default function Home() {
       <FeaturedProjects {...featuredProjectsProps} />
       <Experience {...experienceProps} />
       <EngineeringToolkit {...engineeringToolkitProps} />
+      <Contact />
     </main>
   );
 }
