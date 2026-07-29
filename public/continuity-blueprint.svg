@@ -1,0 +1,48 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#050505"/>
+  <g opacity="0.18" stroke="#F5F5F5" stroke-width="1">
+    <path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M0 600H1200M0 700H1200M0 800H1200M0 900H1200M0 1000H1200M0 1100H1200M0 1200H1200M0 1300H1200M0 1400H1200"/>
+    <path d="M100 0V1500M200 0V1500M300 0V1500M400 0V1500M500 0V1500M600 0V1500M700 0V1500M800 0V1500M900 0V1500M1000 0V1500M1100 0V1500"/>
+  </g>
+  <g stroke="#CCFF00" stroke-width="2">
+    <rect x="130" y="165" width="940" height="1170"/>
+    <path d="M130 340H1070M130 1160H1070"/>
+    <path d="M300 165V340M900 1160V1335"/>
+  </g>
+  <g opacity="0.55" stroke="#7C3AED" stroke-width="2">
+    <circle cx="600" cy="750" r="315"/>
+    <circle cx="600" cy="750" r="220"/>
+    <circle cx="600" cy="750" r="125"/>
+    <path d="M285 750H915M600 435V1065"/>
+  </g>
+  <g fill="#050505" stroke="#F5F5F5" stroke-width="2">
+    <rect x="170" y="530" width="250" height="110"/>
+    <rect x="475" y="695" width="250" height="110"/>
+    <rect x="780" y="860" width="250" height="110"/>
+  </g>
+  <g stroke="#CCFF00" stroke-width="3">
+    <path d="M420 585H535V695"/>
+    <path d="M725 805V915H780"/>
+    <path d="M520 684L535 699L550 684"/>
+    <path d="M765 900L780 915L765 930"/>
+  </g>
+  <g fill="#F5F5F5" font-family="monospace">
+    <text x="195" y="575" font-size="20" letter-spacing="4">01 / REQUEST</text>
+    <text x="195" y="610" font-size="14" opacity="0.5" letter-spacing="2">INPUT CONTRACT</text>
+    <text x="500" y="740" font-size="20" letter-spacing="4">02 / STATE</text>
+    <text x="500" y="775" font-size="14" opacity="0.5" letter-spacing="2">LOGIC CONTINUITY</text>
+    <text x="805" y="905" font-size="20" letter-spacing="4">03 / FRAME</text>
+    <text x="805" y="940" font-size="14" opacity="0.5" letter-spacing="2">RENDER OUTPUT</text>
+    <text x="170" y="245" font-size="18" fill="#CCFF00" letter-spacing="5">CONTINUITY SYSTEM</text>
+    <text x="170" y="285" font-size="13" opacity="0.45" letter-spacing="3">API → STATE → PERFORMANCE → FRAME</text>
+    <text x="170" y="1225" font-size="13" opacity="0.45" letter-spacing="3">TRACE: DETERMINISTIC</text>
+    <text x="170" y="1260" font-size="13" opacity="0.45" letter-spacing="3">MODE: PRODUCTION</text>
+    <text x="170" y="1295" font-size="13" opacity="0.45" letter-spacing="3">REV: 01.00</text>
+  </g>
+  <g fill="#CCFF00">
+    <circle cx="285" cy="750" r="7"/>
+    <circle cx="600" cy="435" r="7"/>
+    <circle cx="915" cy="750" r="7"/>
+    <circle cx="600" cy="1065" r="7"/>
+  </g>
+</svg>

@@ -1,65 +1,108 @@
-import Image from "next/image";
+import { About, type AboutProps } from "@/sections/About";
+import { Hero } from "@/sections/Hero";
+
+const aboutProps = {
+  sidebar: {
+    index: "01 / ABOUT",
+    label: "System profile",
+    status: {
+      label: "System status",
+      value: "Operational",
+      active: true,
+    },
+    clock: {
+      label: "Local time",
+      timeZone: "Asia/Kolkata",
+      locale: "en-IN",
+    },
+    telemetry: [
+      {
+        id: "runtime",
+        label: "Runtime",
+        value: "Next.js 15.5.22",
+      },
+      {
+        id: "language",
+        label: "Language",
+        value: "TypeScript / Strict",
+      },
+      {
+        id: "motion",
+        label: "Motion",
+        value: "GSAP + Framer",
+      },
+      {
+        id: "render",
+        label: "Render",
+        value: "App Router",
+      },
+    ],
+  },
+  editorial: {
+    kicker: "[ Engineering philosophy ]",
+    title: "Continuity across every layer.",
+    introduction:
+      "I build multi-part systems around one governing principle: state, performance, and logic should remain coherent from the initial API request to the final rendered frame.",
+    paragraphs: [
+      "Backend architecture establishes the contract. Cloud infrastructure protects its reliability. The interface makes the same system legible without weakening the underlying logic.",
+      "Every layer is treated as part of a single narrative—measured, observable, and designed to preserve intent as data moves through the stack.",
+    ],
+  },
+  metrics: [],
+  specs: [
+    {
+      id: "framework",
+      label: "Framework",
+      value: "Next.js 15 / App Router",
+      detail: "Server-first composition with isolated client interactions.",
+    },
+    {
+      id: "language",
+      label: "Language",
+      value: "TypeScript / Strict",
+      detail: "Explicit contracts across component and data boundaries.",
+    },
+    {
+      id: "motion-system",
+      label: "Motion system",
+      value: "GSAP + Framer Motion",
+      detail: "Scoped timelines with motion-safe interaction states.",
+    },
+    {
+      id: "styling",
+      label: "Styling",
+      value: "Tailwind CSS",
+      detail: "Responsive, token-driven interface construction.",
+    },
+  ],
+  specsAriaLabel: "System specifications",
+  portrait: {
+    src: "/continuity-blueprint.svg",
+    alt: "Technical blueprint showing a request flowing through state into the rendered frame",
+    width: 1200,
+    height: 1500,
+    caption: "Continuity architecture",
+    credit: "System map / 01",
+    overlayData: [
+      {
+        id: "mode",
+        label: "Mode",
+        value: "Engineering",
+      },
+      {
+        id: "pipeline",
+        label: "Pipeline",
+        value: "API → State → Frame",
+      },
+    ],
+  },
+} satisfies AboutProps;
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main>
+      <Hero />
+      <About {...aboutProps} />
+    </main>
   );
 }
