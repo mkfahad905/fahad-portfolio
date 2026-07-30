@@ -256,7 +256,7 @@ export function ArchitectureDiagram({
         <svg
           className="block h-auto w-full"
           viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
-          role="img"
+          role="group"
           aria-labelledby={`${titleId} ${descriptionId}`}
           preserveAspectRatio="xMidYMid meet"
         >

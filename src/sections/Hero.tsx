@@ -277,7 +277,7 @@ export function Hero() {
                   size="lg"
                   className="group rounded-full bg-[#f5f5ef] text-[#080907] shadow-[0_10px_35px_rgba(0,0,0,0.28)] duration-300 hover:bg-[#c4ff49] hover:opacity-100 hover:shadow-[0_0_36px_rgba(196,255,73,0.22)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c4ff49]"
                 >
-                  <a href="#work">
+                  <a href="#featured-projects">
                     View my work
                     <ArrowUpRight
                       className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -301,7 +301,7 @@ export function Hero() {
           </div>
 
           <a
-            href="#work"
+            href="#featured-projects"
             className="group hidden items-center gap-3 justify-self-end text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white/45 transition-colors hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c4ff49] md:flex"
             data-hero-footer
             aria-label="Scroll to selected work"

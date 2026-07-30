@@ -1,11 +1,4 @@
-export type ContactChannel = {
-  id: "email" | "linkedin" | "github";
-  label: string;
-  description: string;
-  action: string;
-  href: string;
-  external: boolean;
-};
+import type { ContactChannel, ContactContent } from "@/types/contact";
 
 export const CONTACT_EMAIL = "hello@example.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/your-profile";
@@ -38,3 +31,12 @@ export const CONTACT_CHANNELS = [
   },
 ] satisfies readonly ContactChannel[];
 
+export const CONTACT_DATA = {
+  eyebrow: "05 / Contact",
+  title: "Let’s Build Something Meaningful.",
+  description:
+    "I’m currently open to full-time Software Engineering opportunities where I can contribute to scalable products, solve meaningful technical challenges, and continue growing as an engineer.",
+  ctaLabel: "Get In Touch",
+  email: CONTACT_EMAIL,
+  channels: CONTACT_CHANNELS,
+} satisfies ContactContent;

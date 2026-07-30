@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import type { ContactChannel } from "@/config/contact";
+import type { ContactChannel } from "@/types/contact";
 
 type ContactActionCardProps = {
   channel: ContactChannel;
@@ -59,4 +59,3 @@ export function ContactActionCard({
     </motion.a>
   );
 }
-

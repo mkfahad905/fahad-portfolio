@@ -5,34 +5,24 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ContactActionCard } from "@/components/contact/ContactActionCard";
-import {
-  CONTACT_CHANNELS,
-  CONTACT_EMAIL,
-  type ContactChannel,
-} from "@/config/contact";
 import { cn } from "@/lib/utils";
+import type { ContactContent } from "@/types/contact";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export type ContactProps = {
+export type ContactProps = ContactContent & {
   id?: string;
-  eyebrow?: string;
-  title?: string;
-  description?: string;
-  ctaLabel?: string;
-  email?: string;
-  channels?: readonly ContactChannel[];
   className?: string;
 };
 
 export function Contact({
   id = "contact",
-  eyebrow = "05 / Contact",
-  title = "Let’s Build Something Meaningful.",
-  description = "I’m currently open to full-time Software Engineering opportunities where I can contribute to scalable products, solve meaningful technical challenges, and continue growing as an engineer.",
-  ctaLabel = "Get In Touch",
-  email = CONTACT_EMAIL,
-  channels = CONTACT_CHANNELS,
+  eyebrow,
+  title,
+  description,
+  ctaLabel,
+  email,
+  channels,
   className,
 }: ContactProps) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -233,4 +223,3 @@ export function Contact({
 }
 
 export default Contact;
-

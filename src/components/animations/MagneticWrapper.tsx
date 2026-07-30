@@ -101,8 +101,12 @@ export function MagneticWrapper({
         targetScale.set(1.035);
         wrapperRef.current?.style.setProperty("--cursor-opacity", "1");
       }}
-      onPointerDown={() => targetScale.set(0.985)}
-      onPointerUp={() => targetScale.set(1.035)}
+      onPointerDown={() => {
+        if (!prefersReducedMotion) targetScale.set(0.985);
+      }}
+      onPointerUp={() => {
+        if (!prefersReducedMotion) targetScale.set(1.035);
+      }}
       onPointerLeave={resetPosition}
       onBlur={resetPosition}
     >
