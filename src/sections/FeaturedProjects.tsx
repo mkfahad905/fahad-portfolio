@@ -8,10 +8,8 @@ import {
   ProjectsIntroduction,
   type ProjectsIntroductionProps,
 } from "@/components/projects/ProjectsIntroduction";
-import {
-  ProjectCaseStudy,
-  type ProjectCaseStudyData,
-} from "@/components/projects/ProjectCaseStudy";
+import { type ProjectCaseStudyData } from "@/components/projects/ProjectCaseStudy";
+import { HorizontalProjectShowcase } from "@/components/projects/HorizontalProjectShowcase";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,7 +38,6 @@ export function FeaturedProjects({
       const introTitle = sectionRef.current?.querySelector<HTMLElement>(
         "[data-project-intro-title]",
       );
-      const cases = gsap.utils.toArray<HTMLElement>("[data-project-case]");
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
         if (intro) {
@@ -87,64 +84,11 @@ export function FeaturedProjects({
             },
           );
         }
-
-        cases.forEach((projectCase) => {
-          const reveals = gsap.utils.toArray<HTMLElement>(
-            "[data-project-reveal]",
-            projectCase,
-          );
-          const title =
-            projectCase.querySelector<HTMLElement>("[data-project-title]");
-
-          gsap.fromTo(
-            reveals,
-            {
-              autoAlpha: 0,
-              y: 14,
-              willChange: "transform,opacity",
-            },
-            {
-              autoAlpha: 1,
-              y: 0,
-              duration: 0.48,
-              stagger: 0.055,
-              ease: "power3.out",
-              clearProps: "transform,opacity,visibility,willChange",
-              scrollTrigger: {
-                trigger: projectCase,
-                start: "top 76%",
-                once: true,
-              },
-            },
-          );
-
-          if (title) {
-            gsap.fromTo(
-              title,
-              {
-                letterSpacing: "-0.02em",
-                y: 10,
-              },
-              {
-                letterSpacing: "-0.055em",
-                y: 0,
-                duration: 0.56,
-                ease: "power3.out",
-                clearProps: "transform,letterSpacing",
-                scrollTrigger: {
-                  trigger: title,
-                  start: "top 84%",
-                  once: true,
-                },
-              },
-            );
-          }
-        });
       });
 
       media.add("(prefers-reduced-motion: reduce)", () => {
         const allAnimatedElements = gsap.utils.toArray<HTMLElement>(
-          "[data-project-intro], [data-project-intro] > *, [data-project-reveal], [data-project-title]",
+          "[data-project-intro], [data-project-intro] > *",
         );
         gsap.set(allAnimatedElements, {
           autoAlpha: 1,
@@ -163,7 +107,7 @@ export function FeaturedProjects({
       ref={sectionRef}
       id={id}
       className={cn(
-        "relative isolate overflow-clip bg-[#050505] px-4 pb-24 text-white sm:px-6 sm:pb-32 lg:px-8 lg:pb-40",
+        "relative isolate overflow-clip bg-[#050505] px-4 pb-10 text-white sm:px-6 sm:pb-14 lg:px-8 lg:pb-16",
         className,
       )}
       aria-labelledby="featured-projects-heading"
@@ -180,10 +124,8 @@ export function FeaturedProjects({
       <div className="relative mx-auto w-full max-w-[100rem]">
         <ProjectsIntroduction {...introduction} />
 
-        <div>
-          {projects.map((project) => (
-            <ProjectCaseStudy key={project.id} project={project} />
-          ))}
+        <div className="mt-6 sm:mt-8">
+          <HorizontalProjectShowcase projects={projects} />
         </div>
       </div>
     </section>

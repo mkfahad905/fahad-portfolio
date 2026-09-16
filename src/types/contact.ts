@@ -12,6 +12,7 @@ export type ContactContent = {
   title: string;
   description: string;
   ctaLabel: string;
+  ctaHref?: string;
   email: string;
   channels: readonly ContactChannel[];
 };

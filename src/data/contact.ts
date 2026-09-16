@@ -1,6 +1,6 @@
 import type { ContactChannel, ContactContent } from "@/types/contact";
 
-export const CONTACT_EMAIL = "hello@example.com";
+export const CONTACT_EMAIL = "fahadabdurahimanmk@gmail.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/your-profile";
 export const GITHUB_URL = "https://github.com/your-username";
 
@@ -31,12 +31,15 @@ export const CONTACT_CHANNELS = [
   },
 ] satisfies readonly ContactChannel[];
 
+export const CONTACT_CTA_HREF = `mailto:${CONTACT_EMAIL}?subject=Portfolio%20Inquiry`;
+
 export const CONTACT_DATA = {
   eyebrow: "05 / Contact",
-  title: "Let’s Build Something Meaningful.",
+  title: "Let's Build Something Meaningful.",
   description:
-    "I’m currently open to full-time Software Engineering opportunities where I can contribute to scalable products, solve meaningful technical challenges, and continue growing as an engineer.",
+    "I'm currently open to full-time Software Engineering opportunities where I can contribute to scalable products, solve meaningful technical challenges, and continue growing as an engineer.",
   ctaLabel: "Get In Touch",
+  ctaHref: CONTACT_CTA_HREF,
   email: CONTACT_EMAIL,
   channels: CONTACT_CHANNELS,
 } satisfies ContactContent;

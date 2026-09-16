@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { MagneticWrapper } from "@/components/animations/MagneticWrapper";
 import { SplitTextReveal } from "@/components/animations/SplitTextReveal";
 import { BackgroundGrid } from "@/components/ui/BackgroundGrid";
@@ -152,7 +153,7 @@ export function Hero() {
               0.08,
             )
             .to(
-              "[data-hero-orbit]",
+              "[data-hero-circle]",
               {
                 autoAlpha: 0,
                 scale: 1.1,
@@ -172,7 +173,7 @@ export function Hero() {
 
       media.add("(prefers-reduced-motion: reduce)", () => {
         gsap.set(
-          "[data-hero-meta], [data-hero-footer], [data-hero-rule], [data-hero-heading]",
+          "[data-hero-meta], [data-hero-footer], [data-hero-rule], [data-hero-heading], [data-hero-circle]",
           {
             autoAlpha: 1,
             clearProps: "all",
@@ -195,11 +196,27 @@ export function Hero() {
       <BackgroundGrid />
 
       <div
-        className="absolute right-[-9rem] top-[16%] h-[30rem] w-[30rem] rounded-full border border-white/[0.06] sm:right-[-5rem] lg:right-[5%] lg:h-[38rem] lg:w-[38rem]"
-        data-hero-orbit
-        aria-hidden
+        className="pointer-events-none absolute right-[-9rem] top-[16%] h-[30rem] w-[30rem] sm:right-[-5rem] lg:right-[5%] lg:h-[38rem] lg:w-[38rem]"
+        data-hero-circle
       >
-        <span className="absolute left-1/2 top-[-4px] h-2 w-2 rounded-full bg-[#c4ff49] shadow-[0_0_18px_4px_rgba(196,255,73,0.25)]" />
+        <div className="relative h-full w-full overflow-hidden rounded-full border border-white/[0.06] bg-[#0c0d0a]">
+          <Image
+            src="/hero-portrait.png"
+            alt="Portrait of Fahad"
+            fill
+            sizes="(min-width: 1024px) 38rem, 30rem"
+            className="object-cover object-[50%_22%]"
+            priority
+          />
+        </div>
+
+        <div
+          className="absolute inset-0 rounded-full border border-white/[0.06]"
+          data-hero-orbit
+          aria-hidden
+        >
+          <span className="absolute left-1/2 top-[-4px] -translate-x-1/2 h-2 w-2 rounded-full bg-[#c4ff49] shadow-[0_0_18px_4px_rgba(196,255,73,0.25)]" />
+        </div>
       </div>
 
       <div className="relative z-10 mx-auto flex min-w-0 w-full max-w-[100rem] flex-col">

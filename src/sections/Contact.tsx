@@ -21,6 +21,7 @@ export function Contact({
   title,
   description,
   ctaLabel,
+  ctaHref,
   email,
   channels,
   className,
@@ -38,10 +39,15 @@ export function Contact({
         );
       const introduction = gsap.utils.toArray<HTMLElement>(
         "[data-contact-intro]",
+        sectionRef.current,
       );
-      const cards = gsap.utils.toArray<HTMLElement>("[data-contact-card]");
+      const cards = gsap.utils.toArray<HTMLElement>(
+        "[data-contact-card]",
+        sectionRef.current,
+      );
       const closing = gsap.utils.toArray<HTMLElement>(
         "[data-contact-closing]",
+        sectionRef.current,
       );
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
@@ -180,7 +186,7 @@ export function Contact({
               {description}
             </p>
             <a
-              href={`mailto:${email}`}
+              href={ctaHref ?? `mailto:${email}`}
               className="mt-8 inline-flex min-h-12 w-fit items-center justify-center border border-white/18 bg-white px-6 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-black outline-none transition-colors duration-300 hover:border-[#ccff00] hover:bg-[#ccff00] focus-visible:ring-2 focus-visible:ring-[#ccff00] focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
               data-contact-intro
             >

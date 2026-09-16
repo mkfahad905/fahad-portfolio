@@ -55,12 +55,16 @@ export type ProjectCaseStudyData = {
 export type ProjectCaseStudyProps = {
   project: ProjectCaseStudyData;
   className?: string;
+  variant?: "default" | "showcase";
+  overrideIndex?: string;
 };
 
 function ProjectRegister({
   register,
+  overrideIndex,
 }: {
   register: ProjectRegisterData;
+  overrideIndex?: string;
 }) {
   const entries = [
     { label: "Domain", value: register.domain },
@@ -71,11 +75,11 @@ function ProjectRegister({
 
   return (
     <div
-      className="flex flex-col gap-5 border-b border-white/[0.08] pb-5 sm:flex-row sm:items-end sm:justify-between"
+      className="flex flex-col gap-4 border-b border-white/[0.08] pb-4 sm:flex-row sm:items-end sm:justify-between"
       data-project-reveal
     >
       <p className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[#ccff00]">
-        {register.index}
+        {overrideIndex ?? register.index}
       </p>
       <dl className="flex max-w-full snap-x gap-7 overflow-x-auto overscroll-x-contain [scrollbar-color:rgba(204,255,0,0.24)_transparent] [scrollbar-width:thin]">
         {entries.map((entry) => (
@@ -130,6 +134,8 @@ function TechnologyInventory({
 export function ProjectCaseStudy({
   project,
   className,
+  variant = "default",
+  overrideIndex,
 }: ProjectCaseStudyProps) {
   const articleRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -149,6 +155,72 @@ export function ProjectCaseStudy({
     () => activeDecision?.relatedNodeIds ?? [],
     [activeDecision],
   );
+
+  if (variant === "showcase") {
+    return (
+      <article
+        ref={articleRef}
+        id={`project-${project.id}`}
+        className={cn(
+          "relative flex flex-col justify-start gap-4 sm:gap-6 border border-white/[0.08] bg-[#070707]/90 p-5 sm:p-7 lg:p-8",
+          "w-full min-w-0 select-text transition-colors duration-300",
+          className,
+        )}
+        aria-labelledby={headingId}
+        data-project-case
+      >
+        <div
+          className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#ccff00]/60 via-white/20 to-transparent"
+          aria-hidden="true"
+        />
+
+        <ProjectRegister register={project.register} overrideIndex={overrideIndex} />
+
+        <header className="grid gap-3 py-3 sm:py-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:items-end lg:gap-8">
+          <h3
+            id={headingId}
+            className="text-2xl font-medium leading-[1.08] tracking-[-0.04em] text-white sm:text-3xl lg:text-[2.25rem]"
+            data-project-title
+            data-project-reveal
+          >
+            {project.title}
+          </h3>
+          <p
+            className="text-sm leading-relaxed text-[#a1a1aa] sm:text-base"
+            data-project-reveal
+          >
+            {project.premise}
+          </p>
+        </header>
+
+        <div className="grid gap-6 lg:grid-cols-12 lg:gap-8 lg:items-start">
+          <div className="flex flex-col gap-5 lg:col-span-7 min-w-0">
+            <ArchitectureExplorer
+              architecture={project.architecture}
+              layers={project.layers}
+              highlightedNodeIds={highlightedNodeIds}
+              preferredLayerId={activeDecision?.layerId}
+            />
+
+            <TechnologyInventory technologies={project.technologies ?? []} />
+          </div>
+
+          <div className="flex flex-col gap-5 lg:col-span-5 min-w-0">
+            <div className="border border-white/[0.08] bg-white/[0.015] p-3.5 sm:p-4 max-h-[340px] overflow-y-auto overscroll-contain [scrollbar-color:rgba(204,255,0,0.24)_transparent] [scrollbar-width:thin]">
+              <DecisionLedger
+                decisions={project.decisions}
+                activeDecisionId={activeDecision?.id ?? null}
+                onActivate={setActiveDecision}
+              />
+            </div>
+
+            <OutcomeSummary outcome={project.outcome} />
+            <ProjectActions actions={project.actions ?? []} />
+          </div>
+        </div>
+      </article>
+    );
+  }
 
   return (
     <article
