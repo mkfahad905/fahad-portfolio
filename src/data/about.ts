@@ -41,10 +41,10 @@ export const ABOUT_DATA = {
     kicker: "[ Engineering philosophy ]",
     title: "Continuity across every layer.",
     introduction:
-      "I build multi-part systems around one governing principle: state, performance, and logic should remain coherent from the initial API request to the final rendered frame.",
+      "I build full-stack systems where backend logic, APIs, data, and interfaces work as one coherent system—from the initial request to the final rendered experience.",
     paragraphs: [
-      "Backend architecture establishes the contract. Cloud infrastructure protects its reliability. The interface makes the same system legible without weakening the underlying logic.",
-      "Every layer is treated as part of a single narrative—measured, observable, and designed to preserve intent as data moves through the stack.",
+      "Backend architecture establishes the contract. APIs, data flows, and infrastructure need to remain reliable as the system grows.",
+      "The interface is another layer of the same system—translating backend state into clear, responsive experiences without losing the underlying logic.",
     ],
   },
   metrics: [],
@@ -74,7 +74,7 @@ export const ABOUT_DATA = {
       detail: "Responsive, token-driven interface construction.",
     },
   ],
-  specsAriaLabel: "System specifications",
+  specsAriaLabel: "Portfolio system specifications",
   portrait: {
     src: "/continuity-blueprint.svg",
     alt: "Technical blueprint showing a request flowing through state into the rendered frame",

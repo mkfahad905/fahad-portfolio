@@ -232,16 +232,16 @@ export function Hero() {
               <span className="absolute h-full w-full animate-ping rounded-full bg-[#c4ff49]/50" />
               <span className="relative h-1.5 w-1.5 rounded-full bg-[#c4ff49]" />
             </span>
-            Available for select projects
+            Open to full-time software engineering roles
           </p>
 
           <p
             className="hidden text-right font-mono text-[0.65rem] uppercase leading-relaxed tracking-[0.2em] text-white/45 sm:block"
             data-hero-meta
           >
-            Creative developer
+            Full stack developer
             <br />
-            Design &times; Code &times; Motion
+            Backend &times; Frontend &times; Systems
           </p>
         </div>
 
@@ -282,9 +282,8 @@ export function Hero() {
             className="grid min-w-0 w-full items-end gap-7 sm:grid-cols-[minmax(17rem,31rem)_auto] sm:gap-10"
             data-hero-footer
           >
-            <p className="min-w-0 w-full max-w-xl text-sm leading-6 text-white/62 sm:text-base sm:leading-7">
-              I&apos;m Fahad, a creative developer shaping fast, thoughtful
-              interfaces where design, code, and motion work as one.
+            <p className="min-w-0 w-full max-w-xl text-base leading-7 text-white/62 sm:text-lg sm:leading-8">
+              I&apos;m Fahad, a full stack developer building reliable backend systems, APIs, and thoughtful digital experiences.
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
