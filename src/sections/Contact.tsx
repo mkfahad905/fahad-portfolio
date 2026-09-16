@@ -149,7 +149,7 @@ export function Contact({
       ref={sectionRef}
       id={id}
       className={cn(
-        "relative isolate overflow-clip bg-[#050505] px-4 pb-10 pt-24 text-white sm:px-6 sm:pb-12 sm:pt-32 lg:px-8 lg:pb-16 lg:pt-40",
+        "relative isolate overflow-clip bg-[#050505] px-4 pb-12 pt-12 text-white sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20",
         className,
       )}
       aria-labelledby={headingId}
@@ -161,7 +161,7 @@ export function Contact({
           aria-hidden="true"
         />
 
-        <header className="grid gap-10 py-12 sm:py-16 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)] lg:gap-16 lg:py-24">
+        <header className="grid gap-10 py-10 sm:py-12 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)] lg:gap-16 lg:py-16">
           <div>
             <p
               className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[#ccff00]"

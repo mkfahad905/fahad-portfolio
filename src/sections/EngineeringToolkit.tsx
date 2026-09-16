@@ -153,7 +153,7 @@ export function EngineeringToolkit({
       ref={sectionRef}
       id={id}
       className={cn(
-        "relative isolate overflow-clip bg-[#050505] px-4 py-24 text-white sm:px-6 sm:py-32 lg:px-8 lg:py-40",
+        "relative isolate overflow-clip bg-[#050505] px-4 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20",
         className,
       )}
       aria-labelledby={headingId}
@@ -170,7 +170,7 @@ export function EngineeringToolkit({
 
       <div className="relative mx-auto w-full max-w-[100rem]">
         <header
-          className="border-y border-white/[0.08] py-10 sm:py-14 lg:py-20"
+          className="border-y border-white/[0.08] py-10 sm:py-12 lg:py-16"
           data-toolkit-intro
         >
           <p className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[#ccff00]">
@@ -184,7 +184,7 @@ export function EngineeringToolkit({
           </h2>
         </header>
 
-        <div className="grid min-w-0 gap-12 pt-12 sm:pt-16 lg:grid-cols-[minmax(18rem,0.36fr)_minmax(0,0.64fr)] lg:gap-16 lg:pt-20">
+        <div className="grid min-w-0 gap-12 pt-8 sm:pt-10 lg:grid-cols-[minmax(18rem,0.36fr)_minmax(0,0.64fr)] lg:gap-16 lg:pt-12">
           <div>
             <article
               className="border-y border-white/[0.1] py-7 lg:sticky lg:top-24"

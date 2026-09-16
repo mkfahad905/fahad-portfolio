@@ -107,7 +107,7 @@ export function FeaturedProjects({
       ref={sectionRef}
       id={id}
       className={cn(
-        "relative isolate overflow-clip bg-[#050505] px-4 pb-10 text-white sm:px-6 sm:pb-14 lg:px-8 lg:pb-16",
+        "relative isolate overflow-clip bg-[#050505] px-4 pb-12 text-white sm:px-6 sm:pb-16 lg:px-8 lg:pb-20",
         className,
       )}
       aria-labelledby="featured-projects-heading"

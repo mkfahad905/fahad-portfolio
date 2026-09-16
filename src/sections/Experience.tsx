@@ -162,7 +162,7 @@ export function Experience({
       ref={sectionRef}
       id={id}
       className={cn(
-        "relative isolate overflow-clip bg-[#050505] px-4 py-24 text-white sm:px-6 sm:py-32 lg:px-8 lg:py-40",
+        "relative isolate overflow-clip bg-[#050505] px-4 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20",
         className,
       )}
       aria-labelledby={headingId}
@@ -179,7 +179,7 @@ export function Experience({
 
       <div className="relative mx-auto w-full max-w-[100rem]">
         <header
-          className="grid gap-8 border-y border-white/[0.08] py-10 sm:py-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(20rem,0.8fr)] lg:items-end lg:gap-16 lg:py-20"
+          className="grid gap-8 border-y border-white/[0.08] py-10 sm:py-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(20rem,0.8fr)] lg:items-end lg:gap-16 lg:py-16"
           data-experience-intro
         >
           <div>
