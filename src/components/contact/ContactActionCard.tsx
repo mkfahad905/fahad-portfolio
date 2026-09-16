@@ -20,7 +20,7 @@ export function ContactActionCard({
     <motion.a
       href={channel.href}
       target={channel.external ? "_blank" : undefined}
-      rel={channel.external ? "noreferrer" : undefined}
+      rel={channel.external ? "noopener noreferrer" : undefined}
       className="group relative flex min-h-64 flex-col justify-between overflow-hidden border-b border-white/[0.1] px-1 py-7 outline-none transition-colors duration-300 hover:bg-white/[0.025] focus-visible:bg-white/[0.025] focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-[#ccff00] sm:min-h-72 sm:px-6 sm:py-8 lg:border-b-0 lg:border-r lg:border-white/[0.1] lg:last:border-r-0"
       aria-label={`${channel.label}: ${channel.action}${externalLabel}`}
       data-contact-card

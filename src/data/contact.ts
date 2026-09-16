@@ -1,8 +1,8 @@
 import type { ContactChannel, ContactContent } from "@/types/contact";
 
-export const CONTACT_EMAIL = "fahadabdurahimanmk@gmail.com";
-export const LINKEDIN_URL = "https://www.linkedin.com/in/your-profile";
-export const GITHUB_URL = "https://github.com/your-username";
+export const CONTACT_EMAIL = "mkfahad905@gmail.com";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/fahad-mk-19690a309";
+export const GITHUB_URL = "https://github.com/mkfahad905";
 
 export const CONTACT_CHANNELS = [
   {
@@ -10,8 +10,8 @@ export const CONTACT_CHANNELS = [
     label: "Email",
     description: "Start a direct conversation about a role or project.",
     action: "Write an email",
-    href: `mailto:${CONTACT_EMAIL}`,
-    external: false,
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}`,
+    external: true,
   },
   {
     id: "linkedin",
@@ -31,7 +31,7 @@ export const CONTACT_CHANNELS = [
   },
 ] satisfies readonly ContactChannel[];
 
-export const CONTACT_CTA_HREF = `mailto:${CONTACT_EMAIL}?subject=Portfolio%20Inquiry`;
+export const CONTACT_CTA_HREF = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}`;
 
 export const CONTACT_DATA = {
   eyebrow: "05 / Contact",
