@@ -45,10 +45,6 @@ export function Contact({
         "[data-contact-card]",
         sectionRef.current,
       );
-      const closing = gsap.utils.toArray<HTMLElement>(
-        "[data-contact-closing]",
-        sectionRef.current,
-      );
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
         const timeline = gsap.timeline({
@@ -108,28 +104,12 @@ export function Contact({
               clearProps: "transform,opacity,visibility,willChange",
             },
             "-=0.22",
-          )
-          .fromTo(
-            closing,
-            {
-              autoAlpha: 0,
-              y: 10,
-              willChange: "transform,opacity",
-            },
-            {
-              autoAlpha: 1,
-              y: 0,
-              duration: 0.42,
-              stagger: 0.06,
-              clearProps: "transform,opacity,visibility,willChange",
-            },
-            "-=0.18",
           );
       });
 
       media.add("(prefers-reduced-motion: reduce)", () => {
         gsap.set(
-          [divider, ...introduction, ...cards, ...closing].filter(Boolean),
+          [divider, ...introduction, ...cards].filter(Boolean),
           {
             autoAlpha: 1,
             y: 0,
@@ -209,22 +189,6 @@ export function Contact({
             />
           ))}
         </nav>
-
-        <footer className="flex flex-col gap-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:py-10">
-          <p
-            className="font-mono text-[0.625rem] uppercase tracking-[0.18em] text-white/42"
-            data-contact-closing
-          >
-            Available for full-time software engineering
-          </p>
-          <a
-            href="#top"
-            className="w-fit font-mono text-[0.625rem] uppercase tracking-[0.18em] text-white/54 outline-none transition-colors hover:text-[#ccff00] focus-visible:text-[#ccff00] focus-visible:ring-1 focus-visible:ring-[#ccff00]"
-            data-contact-closing
-          >
-            Return to top ↑
-          </a>
-        </footer>
       </div>
     </section>
   );

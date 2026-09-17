@@ -8,6 +8,7 @@ import { Contact } from "@/sections/Contact";
 import { EngineeringToolkit } from "@/sections/EngineeringToolkit";
 import { Experience } from "@/sections/Experience";
 import { FeaturedProjects } from "@/sections/FeaturedProjects";
+import { Footer } from "@/sections/Footer";
 import { Hero } from "@/sections/Hero";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Experience {...EXPERIENCE_DATA} />
       <EngineeringToolkit {...ENGINEERING_TOOLKIT_DATA} />
       <Contact {...CONTACT_DATA} />
+      <Footer />
     </main>
   );
 }
