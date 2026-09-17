@@ -1,47 +1,75 @@
-# Fahad MK - Developer Portfolio
+# Fahad — Full Stack Developer Portfolio
 
-A production-grade developer portfolio built with a focus on robust system architecture, seamless animations, and modern React practices. This repository serves as the source code for my personal portfolio.
+A personal portfolio built to showcase full-stack engineering work, system architecture, interactive interfaces, and selected projects.
 
 ## Overview
 
-The portfolio is designed to showcase enterprise-level engineering capabilities, prioritizing structured data models, clean API boundaries, and high-performance user interfaces over simple static layouts.
+This repository contains the source code for my developer portfolio. Its structure reflects how I approach full-stack development across backend concepts, APIs, data structures, frontend systems, interaction design, and presentation.
 
-## Technology Stack
+## Featured Systems
+
+- **Enterprise Surveillance Operations Platform**: A backend service and API integration layer for managing enterprise alerts. It features ticket workflows, camera/NVR integrations, and production debugging capabilities built with Django, REST APIs, PostgreSQL, RabbitMQ, and MinIO.
+- **InnerLight Counselling Platform**: A counselling website providing an online-first user flow and booking/contact workflow, built with Next.js, TypeScript, and Tailwind CSS.
+
+## Engineering Approach
+
+The application architecture demonstrates:
+- **Backend Architecture & APIs**: Structured to interface cleanly with RESTful services.
+- **Data and Services**: Content and application data are strongly typed and systematically managed.
+- **Frontend State**: UI and interaction state is managed using React hooks and component state.
+- **Digital Experience**: The user interface integrates hardware-accelerated animations and interactive elements.
+- **Maintainability**: The codebase enforces strict typing, component reusability, and modularity.
+- **Responsive Interfaces**: Ensures a consistent experience across devices.
+- **Accessibility**: Includes system-level reduced-motion support.
+
+## Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript (Strict Mode)
+- **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Animations**: GSAP (GreenSock Animation Platform) & Framer Motion
+- **Animation / Interaction**: GSAP, Framer Motion
 - **Icons**: Lucide React
 - **Deployment**: Vercel
 
-## Architecture
+## Project Structure
 
-The application follows a structured **"API → State → Frame"** pipeline:
-1. **Data Layer**: Content and case study data are heavily structured in TypeScript, simulating an external API or headless CMS.
-2. **State Layer**: React context and hooks manage the presentation state efficiently.
-3. **Frame Layer**: The UI is rendered using server and client components, heavily augmented by GSAP and Framer Motion for scroll-linked animations and page transitions.
+- `src/app/` — Next.js App Router definitions, page components, and routing logic.
+- `src/components/` — Reusable UI elements and layout components.
+- `src/sections/` — High-level page sections composing multiple components.
+- `src/config/` — Environment and application-wide configuration values.
+- `src/data/` — Static data structures serving as content for the portfolio.
+- `src/lib/` — Shared utilities, helpers, and shared logic.
+- `src/types/` — Global TypeScript interfaces and type definitions.
 
-## Core Features
+## Getting Started
 
-- **Component-Driven Design**: Highly reusable UI components ensuring design consistency.
-- **Scroll Animations**: Advanced GSAP integration for dynamic content reveal.
-- **Responsive Layouts**: Fully responsive grid and flexbox architecture powered by Tailwind.
-- **Strict Typing**: Comprehensive TypeScript interfaces for all data structures and props to prevent runtime errors.
+To run the portfolio locally, execute the following commands:
 
-## Local Development
+```bash
+npm install
+npm run dev
+```
 
-1. Clone the repository and navigate to the project directory:
-   ```bash
-   git clone https://github.com/mkfahad905/fahad-portfolio.git
-   cd fahad-portfolio
-   ```
-2. Install the dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+The local development server will be available at `http://localhost:3000`.
+
+## Production Build
+
+To verify code quality and build the production bundle, execute:
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
+
+## Deployment
+
+The application is deployed on Vercel.
+
+## Engineering Notes
+
+- **Next.js App Router**: Built using React Server Components (RSC).
+- **Responsive Behavior**: Implements a responsive layout utilizing a utility-first breakpoint system.
+- **Reduced-Motion Support**: Respects system-level accessibility preferences for users who request reduced motion.
+- **Interactive Project Showcase**: Features a custom-built horizontal scrolling project showcase.
+- **SEO / Metadata**: Configured with the Next.js Metadata API, canonical metadata, Open Graph, Twitter metadata, robots, sitemap, and structured data.
