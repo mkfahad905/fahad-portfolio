@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fahad MK - Developer Portfolio
 
-## Getting Started
+A production-grade developer portfolio built with a focus on robust system architecture, seamless animations, and modern React practices. This repository serves as the source code for my personal portfolio.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The portfolio is designed to showcase enterprise-level engineering capabilities, prioritizing structured data models, clean API boundaries, and high-performance user interfaces over simple static layouts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript (Strict Mode)
+- **Styling**: Tailwind CSS
+- **Animations**: GSAP (GreenSock Animation Platform) & Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Architecture
 
-## Learn More
+The application follows a structured **"API → State → Frame"** pipeline:
+1. **Data Layer**: Content and case study data are heavily structured in TypeScript, simulating an external API or headless CMS.
+2. **State Layer**: React context and hooks manage the presentation state efficiently.
+3. **Frame Layer**: The UI is rendered using server and client components, heavily augmented by GSAP and Framer Motion for scroll-linked animations and page transitions.
 
-To learn more about Next.js, take a look at the following resources:
+## Core Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Component-Driven Design**: Highly reusable UI components ensuring design consistency.
+- **Scroll Animations**: Advanced GSAP integration for dynamic content reveal.
+- **Responsive Layouts**: Fully responsive grid and flexbox architecture powered by Tailwind.
+- **Strict Typing**: Comprehensive TypeScript interfaces for all data structures and props to prevent runtime errors.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Local Development
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository and navigate to the project directory:
+   ```bash
+   git clone https://github.com/mkfahad905/fahad-portfolio.git
+   cd fahad-portfolio
+   ```
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
