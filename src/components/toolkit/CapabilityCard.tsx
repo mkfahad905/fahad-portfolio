@@ -39,7 +39,7 @@ export function CapabilityCard({
     <motion.article
       tabIndex={0}
       className={cn(
-        "group relative min-h-64 overflow-hidden border border-white/[0.1] bg-[#070707] p-5 outline-none focus-visible:ring-1 focus-visible:ring-[#ccff00] sm:p-6",
+        "group relative flex flex-col min-h-64 overflow-hidden border border-white/[0.1] bg-[#070707] p-5 outline-none focus-visible:ring-1 focus-visible:ring-[#ccff00] sm:p-6",
         className,
       )}
       aria-labelledby={headingId}
@@ -58,12 +58,6 @@ export function CapabilityCard({
           <p className="font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-white/26">
             Capability
           </p>
-          <h4
-            id={headingId}
-            className="mt-4 text-xl font-medium tracking-[-0.03em] text-white"
-          >
-            {capability.name}
-          </h4>
         </div>
 
         <span
@@ -74,40 +68,60 @@ export function CapabilityCard({
         </span>
       </div>
 
-      <p className="mt-4 max-w-[24ch] text-sm leading-6 text-white/42 transition-opacity duration-200 group-hover:opacity-0 group-focus:opacity-0">
-        {capability.experience}
-      </p>
+      <div className="grid flex-1 mt-4">
+        {/* Normal State Content */}
+        <div className="col-start-1 row-start-1 flex flex-col transition-opacity duration-200 opacity-100 group-hover:opacity-0 group-focus:opacity-0 pointer-events-none">
+          <h4
+            id={headingId}
+            className="text-xl font-medium tracking-[-0.03em] text-white"
+          >
+            {capability.name}
+          </h4>
+          <p className="mt-4 max-w-[24ch] text-sm leading-6 text-white/42">
+            {capability.experience}
+          </p>
+        </div>
 
-      <div
-        id={descriptionId}
-        className="absolute inset-x-5 bottom-5 translate-y-2 opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 sm:inset-x-6 sm:bottom-6"
-      >
-        <p className="font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-[#ccff00]">
-          Applied experience
-        </p>
-        <p className="mt-2 text-sm leading-5 text-white/72">
-          {capability.experience}
-        </p>
+        {/* Active State Content */}
+        <div
+          id={descriptionId}
+          className="col-start-1 row-start-1 flex flex-col transition-[opacity,transform] duration-200 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100"
+        >
+          <p className="font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-[#ccff00] mb-2">
+            Applied experience
+          </p>
+          <h4
+            className="text-xl font-medium tracking-[-0.03em] text-white"
+            aria-hidden="true"
+          >
+            {capability.name}
+          </h4>
+          <p className="mt-2 max-w-[24ch] text-sm leading-5 text-white/72">
+            {capability.experience}
+          </p>
 
-        <ul className="mt-4 space-y-2">
-          {capability.uses.map((use) => (
-            <li
-              key={use}
-              className="grid grid-cols-[0.75rem_1fr] gap-2 text-xs leading-5 text-[#a1a1aa]"
-            >
-              <span
-                className="mt-[0.6rem] h-px w-2 bg-[#7c3aed]"
-                aria-hidden="true"
-              />
-              {use}
-            </li>
-          ))}
-        </ul>
+          <ul className="mt-4 space-y-2">
+            {capability.uses.map((use) => (
+              <li
+                key={use}
+                className="grid grid-cols-[0.75rem_1fr] gap-2 text-xs leading-5 text-[#a1a1aa]"
+              >
+                <span
+                  className="mt-[0.6rem] h-px w-2 bg-[#7c3aed]"
+                  aria-hidden="true"
+                />
+                {use}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <p className="absolute inset-x-5 bottom-5 font-mono text-[0.5rem] uppercase tracking-[0.16em] text-white/20 transition-opacity duration-200 group-hover:opacity-0 group-focus:opacity-0 sm:inset-x-6 sm:bottom-6">
-        Focus / inspect
-      </p>
+      <div className="mt-auto pt-6">
+        <p className="font-mono text-[0.5rem] uppercase tracking-[0.16em] text-white/20 transition-opacity duration-200 group-hover:opacity-0 group-focus:opacity-0">
+          Focus / inspect
+        </p>
+      </div>
     </motion.article>
   );
 }
