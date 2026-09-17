@@ -81,7 +81,7 @@ function ProjectRegister({
       <p className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[#ccff00]">
         {overrideIndex ?? register.index}
       </p>
-      <dl className="flex max-w-full snap-x gap-7 overflow-x-auto overscroll-x-contain [scrollbar-color:rgba(204,255,0,0.24)_transparent] [scrollbar-width:thin]">
+      <dl className="flex max-w-full snap-x gap-7 overflow-x-auto overscroll-x-contain -mx-5 px-5 sm:ml-0 sm:pl-0 sm:-mr-7 sm:pr-7 lg:-mr-8 lg:pr-8 [scrollbar-color:rgba(204,255,0,0.24)_transparent] [scrollbar-width:thin]">
         {entries.map((entry) => (
           <div key={entry.label} className="min-w-max snap-start">
             <dt className="font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-white/26">
@@ -110,7 +110,7 @@ function TechnologyInventory({
       aria-label="Technology responsibilities"
       data-project-reveal
     >
-      <ul className="flex snap-x overflow-x-auto overscroll-x-contain [scrollbar-color:rgba(204,255,0,0.24)_transparent] [scrollbar-width:thin]">
+      <ul className="flex snap-x overflow-x-auto overscroll-x-contain -mx-5 px-5 sm:-mx-7 sm:px-7 lg:mx-0 lg:px-0 [scrollbar-color:rgba(204,255,0,0.24)_transparent] [scrollbar-width:thin]">
         {technologies.map((technology) => (
           <li
             key={technology.id}

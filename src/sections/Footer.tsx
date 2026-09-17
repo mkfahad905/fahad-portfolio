@@ -103,7 +103,7 @@ export function Footer({ className }: { className?: string }) {
             </p>
             
             <a
-              href="#top"
+              href="#home"
               onClick={handleBackToTop}
               className="inline-flex w-fit items-center font-mono text-[0.625rem] uppercase tracking-[0.18em] text-white/54 outline-none transition-colors hover:text-[#ccff00] focus-visible:text-[#ccff00] focus-visible:ring-1 focus-visible:ring-[#ccff00] focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
             >

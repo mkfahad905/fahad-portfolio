@@ -39,15 +39,13 @@ export function ExperienceCard({
 
   return (
     <motion.article
-      tabIndex={0}
       className={cn(
-        "relative min-w-0 border border-white/[0.1] bg-[#070707] p-5 outline-none focus-visible:ring-1 focus-visible:ring-[#ccff00] sm:p-7 lg:p-8",
+        "relative min-w-0 border border-white/[0.1] bg-[#070707] p-5 sm:p-7 lg:p-8",
         className,
       )}
       aria-labelledby={headingId}
       initial={false}
       whileHover={interactiveState}
-      whileFocus={interactiveState}
       transition={{
         duration: prefersReducedMotion ? 0 : 0.22,
         ease: [0.22, 1, 0.36, 1],
