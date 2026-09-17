@@ -86,14 +86,7 @@ export function Hero() {
             0.45,
           );
 
-        gsap.to("[data-hero-orbit]", {
-          rotate: 360,
-          duration: 34,
-          repeat: -1,
-          ease: "none",
-          transformOrigin: "center",
-          force3D: true,
-        });
+
 
         gsap.to("[data-radial-glow]", {
           xPercent: -7,
@@ -170,6 +163,27 @@ export function Hero() {
             );
         }
       });
+
+      media.add(
+        {
+          isDesktop:
+            "(min-width: 1024px) and (prefers-reduced-motion: no-preference)",
+          isMobile:
+            "(max-width: 1023px) and (prefers-reduced-motion: no-preference)",
+        },
+        (context) => {
+          const { isMobile } = context.conditions as { isMobile: boolean };
+
+          gsap.to("[data-hero-orbit]", {
+            rotate: isMobile ? -360 : 360,
+            duration: 34,
+            repeat: -1,
+            ease: "none",
+            transformOrigin: "center",
+            force3D: true,
+          });
+        },
+      );
 
       media.add("(prefers-reduced-motion: reduce)", () => {
         gsap.set(
