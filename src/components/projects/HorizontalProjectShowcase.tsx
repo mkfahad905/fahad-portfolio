@@ -318,7 +318,7 @@ export function HorizontalProjectShowcase({
       </div>
 
       {/* Horizontal Track Container */}
-      <div className="relative w-full overflow-hidden pt-4 sm:pt-6">
+      <div className="relative w-full pt-4 sm:pt-6 lg:overflow-hidden">
         <div
           ref={trackRef}
           onScroll={handleMobileScroll}
@@ -326,6 +326,8 @@ export function HorizontalProjectShowcase({
             "flex w-full min-w-full items-start gap-6 sm:gap-8 lg:gap-10",
             // Mobile: native horizontal swipe with snap
             "overflow-x-auto snap-x snap-mandatory overscroll-x-contain pb-4 lg:overflow-visible lg:pb-6",
+            // Full bleed on mobile/tablet
+            "-mx-4 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0",
             // Custom subtle scrollbar
             "[scrollbar-color:rgba(204,255,0,0.2)_transparent] [scrollbar-width:thin]",
           )}

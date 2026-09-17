@@ -112,7 +112,7 @@ export function SpecGrid({
         </span>
       </header>
 
-      <ul className="grid auto-cols-[minmax(15.5rem,78vw)] snap-x snap-mandatory grid-flow-col overflow-x-auto overscroll-x-contain border-l border-white/[0.08] [scrollbar-color:rgba(204,255,0,0.28)_transparent] [scrollbar-width:thin] sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-2 sm:overflow-visible xl:grid-cols-3">
+      <ul className="grid auto-cols-[minmax(15.5rem,78vw)] snap-x snap-mandatory grid-flow-col overflow-x-auto overscroll-x-contain border-l border-white/[0.08] -mx-4 px-4 sm:mx-0 sm:px-0 [scrollbar-color:rgba(204,255,0,0.28)_transparent] [scrollbar-width:thin] sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-2 sm:overflow-visible xl:grid-cols-3">
         {metrics.map((metric, index) => (
           <SpecCard key={metric.id} index={index}>
             <DataCounter metric={metric} className="pt-8" />
