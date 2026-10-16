@@ -219,7 +219,7 @@ export function Hero() {
             alt="Portrait of Fahad"
             fill
             sizes="(min-width: 1024px) 38rem, 30rem"
-            className="object-cover object-[50%_22%]"
+            className="object-cover object-[50%_18%]"
             priority
           />
         </div>
